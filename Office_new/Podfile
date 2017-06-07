@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target "Office" do
+    pod 'CoreFramework', :path => './CoreFramework_new'
+    pod 'NIMSDK', '~> 3.6.0'
+    pod 'SDWebImage', '3.8.2'
+    pod 'Toast', '~> 3.0'
+    pod 'SVProgressHUD', '~> 2.0.3'
+    pod 'CocoaLumberjack', '~> 2.2.0'
+    pod 'Reachability', '~> 3.1.1'
+    pod 'M80AttributedLabel', '~> 1.6.3'
+    pod 'GPUImage'
+    pod 'SSZipArchive', '~> 1.2'
+    pod 'TZImagePickerController', '~> 1.7.7'
+    pod 'FMDB', '~> 2.5'
+    pod 'ImageSlideshow', '~> 1.2.0'
+    pod "ImageSlideshow/SDWebImage", '~> 1.2.0'
+
+end
+
+

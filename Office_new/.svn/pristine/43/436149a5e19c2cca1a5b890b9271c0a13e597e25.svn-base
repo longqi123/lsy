@@ -1,0 +1,85 @@
+//
+//  TZGGDetailModel.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/6/5.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+import HandyJSON
+import SwiftyJSON
+
+struct TZGGDetailModel :HandyJSON{
+    var chrq = ""
+    var yhqrbj = ""
+    var xgrq = ""
+    var sprDm = ""
+    var lrrq = ""
+    var tzxxzfbz = ""
+    var tzggztDm = ""
+    var sprq = ""
+    var jzrq = ""
+    var sfszrw = ""
+    var spyj = ""
+    var fbrq = ""
+    var tzggnr = ""
+    var dxtxclrq = ""
+    var spjg = ""
+    var lrrmc = ""
+    var jsswrymc = ""
+    var txsj = ""
+    var lrrDm = ""
+    var jsswryDm = ""
+    var fbrmc = ""
+    var jsrybuuid = ""
+    var tzggbt = ""
+    var tzgguuid = ""
+    var chrmc = ""
+    var cxrq = ""
+    var ssrq = ""
+    var jsryzfbz = ""
+    var sprmc = ""
+    var tzggztmc = ""
+    var fbrDm = ""
+    var sfsddxtz = ""
+    var chrDm = ""
+    init(json: JSON) {
+        chrq = json["chrq"].stringValue
+        yhqrbj = json["yhqrbj"].stringValue
+        xgrq = json["xgrq"].stringValue
+        sprDm = json["sprDm"].stringValue
+        lrrq = json["lrrq"].stringValue
+        tzxxzfbz = json["tzxxzfbz"].stringValue
+        tzggztDm = json["tzggztDm"].stringValue
+        sprq = json["sprq"].stringValue
+        jzrq = json["jzrq"].stringValue
+        sfszrw = json["sfszrw"].stringValue
+        spyj = json["spyj"].stringValue
+        fbrq = json["fbrq"].stringValue
+        tzggnr = json["tzggnr"].stringValue
+        dxtxclrq = json["dxtxclrq"].stringValue
+        spjg = json["spjg"].stringValue
+        lrrmc = json["lrrmc"].stringValue
+        jsswrymc = json["jsswrymc"].stringValue
+        txsj = json["txsj"].stringValue
+        lrrDm = json["lrrDm"].stringValue
+        jsswryDm = json["jsswryDm"].stringValue
+        fbrmc = json["fbrmc"].stringValue
+        jsrybuuid = json["jsrybuuid"].stringValue
+        tzggbt = json["tzggbt"].stringValue
+        tzgguuid = json["tzgguuid"].stringValue
+        chrmc = json["chrmc"].stringValue
+        cxrq = json["cxrq"].stringValue
+        ssrq = json["ssrq"].stringValue
+        jsryzfbz = json["jsryzfbz"].stringValue
+        sprmc = json["sprmc"].stringValue
+        tzggztmc = json["tzggztmc"].stringValue
+        fbrDm = json["fbrDm"].stringValue
+        sfsddxtz = json["sfsddxtz"].stringValue
+        chrDm = json["chrDm"].stringValue
+    }
+    public init() {
+        
+    }
+}

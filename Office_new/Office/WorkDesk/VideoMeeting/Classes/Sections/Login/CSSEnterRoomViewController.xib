@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CSSEnterRoomViewController">
+            <connections>
+                <outlet property="createRoomButton" destination="8Tu-hf-9ve" id="phX-h5-l74"/>
+                <outlet property="searchRoomButton" destination="yQI-BG-4VV" id="7Po-6J-nRY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tu-hf-9ve">
+                    <rect key="frame" x="43" y="228.5" width="289" height="90"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="1" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Hej-t3-e9d"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="-75" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="创建会议室"/>
+                    <connections>
+                        <action selector="onCreateMeetingRoom:" destination="-1" eventType="touchUpInside" id="UAA-zd-FL4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQI-BG-4VV">
+                    <rect key="frame" x="43" y="348.5" width="289" height="90"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="1" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="MIX-u6-MWh"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="-75" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="加入会议室"/>
+                    <connections>
+                        <action selector="onSearchMeetingRoom:" destination="-1" eventType="touchUpInside" id="HyJ-mK-6oA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yQI-BG-4VV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="60" id="8Ul-od-UGs"/>
+                <constraint firstItem="8Tu-hf-9ve" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="43" id="8gG-nJ-A1Q"/>
+                <constraint firstItem="yQI-BG-4VV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hcd-qb-QdE"/>
+                <constraint firstItem="yQI-BG-4VV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="43" id="Rrg-N2-aWt"/>
+                <constraint firstAttribute="trailing" secondItem="yQI-BG-4VV" secondAttribute="trailing" constant="43" id="dGN-dh-A5B"/>
+                <constraint firstItem="8Tu-hf-9ve" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-60" id="fmw-8O-D17"/>
+                <constraint firstAttribute="trailing" secondItem="8Tu-hf-9ve" secondAttribute="trailing" constant="43" id="hf4-Uk-XRL"/>
+                <constraint firstItem="8Tu-hf-9ve" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="v2o-gN-NeY"/>
+            </constraints>
+            <point key="canvasLocation" x="306.5" y="265.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,157 @@
+//
+//  NotificationContenController.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/6/2.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+import CoreFramework
+
+class NotificationContenController: UIViewController {
+    var titleStr = ""
+    var contentStr = ""
+    var switchON = false
+    var showDataSource: [TxlModel1] = []
+    let tableView = BaseTableView(frame: .zero, style: .grouped)
+    let headerId = "SendNotificationHeaderID"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "通知详情"
+        self.showDataSource = DataCenter.AdddataSource
+        creatUI()
+    }
+}
+
+extension NotificationContenController{
+    func creatUI() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .singleLine
+        tableView.tableFooterView = UIView()
+        tableView.snp.makeConstraints { (make) in
+            make.top.left.bottom.right.equalToSuperview()
+        }
+        tableView.register(NotificationPersonCell.self, forCellReuseIdentifier: "NotificationPersonCellID")
+    }
+}
+
+extension NotificationContenController: UITableViewDelegate,UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }else if section == 1{
+            return 1
+        }else if section == 2{
+            return 5
+        }else{
+            return 2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 160
+        }else if indexPath.section == 1{
+            if indexPath.row == 0 {
+                return 45
+            }
+        }else if indexPath.section == 2{
+            if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3  {
+                return 45
+            }else {
+                return 100
+            }
+        
+        }else if indexPath.section == 3{
+            return 45
+        }
+        return 45
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = Bundle.main.loadNibNamed("NewNotificationCell1", owner: self, options: nil)?.last as! NewNotificationCell1
+            cell.CintentBlock = {[weak self] content,title in
+                self?.titleStr = title
+                self?.contentStr = content
+            }
+            cell.selectionStyle = .none
+            return cell
+            
+        }else if indexPath.section == 1{
+            if indexPath.row == 0 {
+                let cell  = Bundle.main.loadNibNamed("NotificationDetailCell2", owner: self, options: nil)?.last as! NotificationDetailCell2
+                cell.title.text = "选择接收人"
+                cell.content.text = "25人"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+
+            }
+            
+        }else if indexPath.section == 2{
+            let cell  = Bundle.main.loadNibNamed("NotificationDetailCell2", owner: self, options: nil)?.last as! NotificationDetailCell2
+            if indexPath.row == 0 {
+                cell.title.text = "审批人"
+                cell.content.text = "丽丽"
+            }else if indexPath.row == 1{
+                cell.title.text = "审批结果"
+                cell.content.text = "审批通过"
+            }else if indexPath.row == 2{
+                cell.title.text = "审批时间"
+                cell.content.text = "2017-05-11"
+            }else if indexPath.row == 3{
+                cell.title.text = "审批意见"
+                cell.content.text = ""
+            }else if indexPath.row == 4{
+                let celll = Bundle.main.loadNibNamed("AuditOpinionCell", owner: self, options: nil)?.last as! AuditOpinionCell
+                celll.placeLab.isHidden = true
+                celll.content.text = "那我可佛王府井你发你哦你好NFIFO来看九分裤KNSF及回复IFHIOFK看看风范地方积分解解乏IE交房废话覅额话费Q"
+                celll.content.isUserInteractionEnabled = false
+                return celll
+            }
+            cell.content.isUserInteractionEnabled = false
+            cell.content.textAlignment = .right
+            return cell
+        }else if indexPath.section == 3{
+           
+            let cell  = Bundle.main.loadNibNamed("NotificationDetailCell2", owner: self, options: nil)?.last as! NotificationDetailCell2
+            if indexPath.row == 1 {
+                cell.title.text = "截止时间"
+                cell.content.text = "2018-12-22"
+            }else{
+                cell.title.text = "提醒"
+                cell.content.text = "截止前15分钟"
+            }
+            return cell
+            }
+        return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.001
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                let vc = HaveAcceptController()
+                vc.AdddataSource = DataCenter.AdddataSource
+                vc.haveSeleFringBlock = { selectArr in
+                    self.showDataSource = selectArr
+                    self.tableView.reloadData()
+                }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+}

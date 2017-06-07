@@ -1,0 +1,40 @@
+//
+//  CreatSessionViewController.m
+//  Office
+//
+//  Created by roger on 2017/5/22.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+#import "CreatSessionViewController.h"
+
+@interface CreatSessionViewController ()
+
+@end
+
+@implementation CreatSessionViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    //构造消息
+    NIMMessage *message = [[NIMMessage alloc] init];
+    message.text = @"通知";
+    message.apnsContent = @"apnsContent";
+    message.messageExt = @"messageExt";
+    message.remoteExt = @{@"test":@"test"};
+    
+    //构造会话
+    NIMSession *session = [NIMSession session:@"rogertan30" type:NIMSessionTypeP2P];
+    
+    //发送消息
+    [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:session error:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end

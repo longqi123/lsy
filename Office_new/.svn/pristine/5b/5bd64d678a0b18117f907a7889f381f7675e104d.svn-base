@@ -1,0 +1,16 @@
+//
+//  MessageCenterData.swift
+//  Office
+//
+//  Created by roger on 2017/3/30.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import HandyJSON
+
+struct MessageCenterModel: HandyJSON {
+    var title: String?
+    var description: String?
+    var time : String?
+    var imageName : String?
+}

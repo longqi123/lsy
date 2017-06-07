@@ -1,0 +1,18 @@
+//
+//  NotificationPersonCell3.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/5/31.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+
+class NotificationPersonCell3: UICollectionViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+}

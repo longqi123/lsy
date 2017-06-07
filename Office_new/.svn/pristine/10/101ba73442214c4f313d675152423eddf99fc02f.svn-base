@@ -1,0 +1,76 @@
+//
+//  MessegeContentController.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/5/27.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+import CoreFramework
+import HandyJSON
+import SwiftyJSON
+
+class MessegeContentController: UIViewController {
+    
+    let tableView = BaseTableView(frame: .zero, style: .grouped)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        creatUI()
+        getData()
+    }
+}
+
+extension MessegeContentController{
+    func creatUI() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .singleLine
+        tableView.tableFooterView = UIView()
+        tableView.snp.makeConstraints { (make) in
+            make.top.left.bottom.right.equalToSuperview()
+        }
+    
+    }
+    func getData(){
+        
+    }
+}
+
+extension MessegeContentController: UITableViewDelegate,UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("MessegeContentcell", owner: self, options: nil)?.last as! MessegeContentcell
+        cell.title.text = "王菲王菲王菲肯热风额哥哥额哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个个人干戈扰攘王菲王菲王菲肯热风额哥哥额哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个个人干哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个个人干戈扰攘王菲王菲王菲肯热风额哥哥额哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个"
+        cell.originator.text = "发送人：王菲王菲王菲肯热风额哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个个人干戈扰攘王菲王菲王菲肯热风额哥哥额哥哥防守打法任务人为干扰我国各岗位该服务干扰过给我个个人干"
+        cell.time.text = "2017-11-11"
+        return cell
+    
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.001
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = AnnouncementController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+}

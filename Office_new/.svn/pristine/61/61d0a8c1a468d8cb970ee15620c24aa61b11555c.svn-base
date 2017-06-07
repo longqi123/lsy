@@ -1,0 +1,48 @@
+//
+//  Use this file to import your target's public headers that you would like to expose to Swift.
+//
+
+//swift调用oc
+
+#import <NIMSDK/NIMSDK.h>
+#import <NIMAVChat/NIMAVChat.h>
+#import "NTESGlobalMacro.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+#import "NTESLoginManager.h"
+#import "NTESLoginViewController.h"
+#import "NIMSessionListViewController.h"
+#import "NTESSessionListViewController.h"
+#import "NTESDemoConfig.h"
+#import "NTESCustomAttachmentDecoder.h"
+#import "NIMKit.h"
+#import "NTESCellLayoutConfig.h"
+#import "NTESSDKConfigDelegate.h"
+#import "NTESLogManager.h"
+#import "NTESNotificationCenter.h"
+#import "NTESSubscribeManager.h"
+
+//视频会议
+#import "CSSEnterRoomViewController.h"
+#import "CSSLoginViewController.h"
+#import "CSKit.h"
+#import "CSSDemoConfig.h"
+#import "CSSCustomAttachmentDecoder.h"
+#import "CSSDataManager.h"
+#import "CSSLoginManager.h"
+#import "CSSLogManager.h"
+
+//IM
+#import "NTESDemoRegisterTask.h"
+#import "NTESDemoService.h"
+#import "NSString+NTES.h"
+#import "NSString+CSS.h"
+#import "NTESLoginManager.h"
+
+//群发助手
+#import "CreatSessionViewController.h"
+
+//Coreframework
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCrypto.h>
+
