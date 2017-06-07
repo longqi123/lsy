@@ -1,0 +1,25 @@
+//
+//  DataCenter.swift
+//  Office
+//
+//  Created by GA GA on 19/05/2017.
+//  Copyright © 2017 roger. All rights reserved.
+//
+
+import UIKit
+
+class DataCenter {
+
+    /// 登录后信息
+    static var dlzhxxModel: DlzhxxModel?
+    /// 人员信息
+    static var ryxqModel: RyxqModel?
+    
+    static var username: String?
+    
+    static var password: String?
+    
+    private init(){}
+
+
+}

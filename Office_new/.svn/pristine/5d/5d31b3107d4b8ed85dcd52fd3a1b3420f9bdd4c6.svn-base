@@ -1,0 +1,40 @@
+//
+//  AdressContactCell.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/5/26.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+
+class AdressContactCell: UITableViewCell {
+
+    @IBOutlet weak var xuanZhongImg: UIButton!
+    
+    @IBOutlet weak var photolab: UILabel!
+    
+    @IBOutlet weak var nameLab: UILabel!
+    
+    @IBOutlet weak var numLab: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        nameLab.textColor = UIColor.T2
+        nameLab.font = UIFont.H5
+        
+        numLab.textColor = UIColor.T3
+        numLab.font = UIFont.H8
+        
+        photolab.textColor = UIColor.T6
+        photolab.font = UIFont.H8
+        photolab.layer.masksToBounds = true
+        photolab.layer.cornerRadius = 20
+        let red = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
+        let green = CGFloat( arc4random_uniform(255))/CGFloat(255.0)
+        let blue = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
+        let alpha = 1.0
+        photolab.backgroundColor = UIColor.init(red:red, green:green, blue:blue , alpha: CGFloat(alpha))
+        
+    }
+}

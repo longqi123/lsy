@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="AddressTitleCell" selectionStyle="default" indentationWidth="10" rowHeight="76" id="KGk-i7-Jjw" customClass="AddressTitleCell" customModule="Office" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="336" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="si_chuan_shui_wu_xiao" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-sR-fIi">
+                        <rect key="frame" x="8" y="16.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="boq-NU-8Kq"/>
+                            <constraint firstAttribute="height" constant="35" id="ucY-nP-ypc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="双流区地方税务局" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-hn-OCI">
+                        <rect key="frame" x="51" y="23.5" width="147" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AE2-hn-OCI" firstAttribute="centerY" secondItem="gpJ-sR-fIi" secondAttribute="centerY" id="PQp-be-4B4"/>
+                    <constraint firstItem="gpJ-sR-fIi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="REr-G6-AxY"/>
+                    <constraint firstItem="gpJ-sR-fIi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TgL-uS-7kD"/>
+                    <constraint firstItem="AE2-hn-OCI" firstAttribute="leading" secondItem="gpJ-sR-fIi" secondAttribute="trailing" constant="8" id="jfW-lQ-bvc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-218" y="-108"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="si_chuan_shui_wu_xiao" width="22" height="22"/>
+    </resources>
+</document>

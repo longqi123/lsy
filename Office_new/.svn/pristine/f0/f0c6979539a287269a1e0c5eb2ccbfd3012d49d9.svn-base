@@ -1,0 +1,60 @@
+//
+//  NotificationPersonCell.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/5/31.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+import CoreFramework
+
+class NotificationPersonCell: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegate {
+    var personArr:[TxlModel1] = []
+    var mycolectionView:UICollectionView!
+    var personClick:((_ dataArr:[TxlModel1]) -> Void)?
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.CreatUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func CreatUI(){
+        let myFlowLayout = UICollectionViewFlowLayout()
+        myFlowLayout.minimumInteritemSpacing = 0
+        myFlowLayout.minimumLineSpacing = 0
+        myFlowLayout.scrollDirection = .vertical
+        myFlowLayout.itemSize = CGSize(width: (screenWidth - 24)/6, height: 50)
+        mycolectionView = UICollectionView(frame: .zero, collectionViewLayout: myFlowLayout)
+        mycolectionView.dataSource = self
+        mycolectionView.delegate = self
+        mycolectionView.backgroundColor = UIColor.white
+        mycolectionView.register(NotificationPersonCell2.self, forCellWithReuseIdentifier: "NotificationPersonCell2ID")
+        contentView.addSubview(mycolectionView)
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.personArr.count + 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == self.personArr.count {
+            let cell = Bundle.main.loadNibNamed("NotificationPersonCell3", owner: self, options: nil)?.last as! NotificationPersonCell3
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NotificationPersonCell2ID", for: indexPath) as! NotificationPersonCell2
+            cell.photoNum.text = "往小"
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == self.personArr.count {//跳转通讯录去添加
+            self.personClick!(personArr)
+        }else{//删除某一个
+            self.personArr.remove(at: indexPath.row)
+            self.mycolectionView.reloadData()
+        }
+    }
+}

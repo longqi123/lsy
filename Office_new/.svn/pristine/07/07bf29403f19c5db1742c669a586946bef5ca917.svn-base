@@ -1,0 +1,37 @@
+//
+//  WorkDeskModel.swift
+//  Office
+//
+//  Created by GA GA on 24/05/2017.
+//  Copyright © 2017 roger. All rights reserved.
+//
+
+import UIKit
+import SwiftyJSON
+import HandyJSON
+
+struct WorkDeskModel: HandyJSON {
+    var yymc = ""
+    var yyid = ""
+    
+    init(json: JSON) {
+        yymc = json["yymc"].stringValue
+        yyid = json["yyid"].stringValue
+    }
+    
+    public init() {}
+}
+
+struct WorkDeskImageModel {
+    var images = [String]()
+    var titles = [String]()
+    var contentUrl = [String]()
+    
+    init(json: JSON) {
+        for (_, item) in json {
+            images.append(item["src"].stringValue)
+            titles.append(item["title"].stringValue)
+            contentUrl.append(item["href"].stringValue)
+        }
+    }
+}

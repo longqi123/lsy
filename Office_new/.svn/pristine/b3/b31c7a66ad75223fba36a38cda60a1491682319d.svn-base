@@ -1,0 +1,30 @@
+//
+//  Personaldetailcell.swift
+//  Office
+//
+//  Created by 梁仕友 on 2017/5/16.
+//  Copyright © 2017年 roger. All rights reserved.
+//
+
+import UIKit
+
+class Personaldetailcell: UITableViewCell {
+
+    @IBOutlet weak var photoImg: UIImageView!
+    
+    
+    @IBOutlet weak var nameLab: UILabel!
+    
+    
+    @IBOutlet weak var rightBtn: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        photoImg.layer.masksToBounds = true
+        photoImg.layer.cornerRadius = 25
+        nameLab.font = UIFont.H2
+        nameLab.textColor = UIColor.T2
+    }
+
+    
+}
